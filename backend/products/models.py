@@ -8,3 +8,10 @@ class Product(models.Model):
     price=models.DecimalField(max_digits=15,decimal_places=2)
     def __str__(self):
         return (f"{self.title}")
+    @property
+    def sale_price(self):
+        return "%.2f" %(float(self.price)*0.8)
+    
+    def discount(self):
+        return "122"
+
